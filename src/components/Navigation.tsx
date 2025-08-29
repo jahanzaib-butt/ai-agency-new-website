@@ -40,6 +40,7 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { name: "Services", href: "/services" },
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
@@ -57,7 +58,7 @@ const Navigation = () => {
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
             <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">CryptoTrade</span>
+            <span className="font-bold text-base">GrowthAI</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -67,8 +68,8 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => {
-                  e.preventDefault();
                   if (item.onClick) {
+                    e.preventDefault();
                     item.onClick();
                   }
                 }}
@@ -82,7 +83,7 @@ const Navigation = () => {
               size="sm"
               className="button-gradient"
             >
-              Start Trading
+              Get Started
             </Button>
           </div>
 
@@ -102,9 +103,9 @@ const Navigation = () => {
                       href={item.href}
                       className="text-lg text-muted-foreground hover:text-foreground transition-colors"
                       onClick={(e) => {
-                        e.preventDefault();
                         setIsMobileMenuOpen(false);
                         if (item.onClick) {
+                          e.preventDefault();
                           item.onClick();
                         }
                       }}
@@ -119,7 +120,7 @@ const Navigation = () => {
                     }}
                     className="button-gradient mt-4"
                   >
-                    Start Trading
+                    Get Started
                   </Button>
                 </div>
               </SheetContent>

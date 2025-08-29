@@ -6,40 +6,40 @@ import { Card } from "./ui/card";
 
 const testimonials = [
   {
-    name: "Michael Chen",
-    role: "Professional Trader",
+    name: "Sarah Chen",
+    role: "SaaS Founder",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content: "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind."
+    content: "The AI lead generation system increased our qualified leads by 300% in just 30 days. The automated qualification process saves our sales team hours every day."
   },
   {
-    name: "Sarah Johnson",
-    role: "Crypto Fund Manager",
+    name: "Marcus Johnson",
+    role: "E-commerce CEO",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
-    content: "CryptoTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours."
+    content: "We went from 20 leads per month to 250+ qualified prospects. The voice AI appointment setting is incredible - it sounds completely human and books meetings 24/7."
   },
   {
-    name: "David Wilson",
-    role: "Early Crypto Investor",
+    name: "Lisa Rodriguez", 
+    role: "Marketing Director",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
-    content: "The customer support is exceptional, and the platform's intuitive design made getting started with crypto trading seamless. A game-changer for both beginners and pros."
+    content: "The LinkedIn lead sourcing delivered exactly the prospects we needed. Our B2B pipeline grew by 400% and the lead quality is outstanding."
   },
   {
-    name: "Emily Zhang",
-    role: "DeFi Developer",
+    name: "David Kim",
+    role: "Agency Owner",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content: "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive."
+    content: "Their custom automation workflows eliminated 70% of our manual tasks. The CRM integrations and follow-up sequences run flawlessly without any intervention."
   },
   {
-    name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    name: "Amanda Foster",
+    role: "Sales Manager",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed."
+    content: "The AI sales training improved our team's close rate by 180%. The objection handling practice and real-time coaching made a massive difference."
   },
   {
-    name: "Lisa Thompson",
-    role: "Portfolio Manager",
+    name: "Robert Wilson",
+    role: "Professional Services",
     image: "https://avatars.githubusercontent.com/u/6789012?v=4",
-    content: "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management."
+    content: "Invoice follow-ups are completely automated now - we collect payments 70% faster and our cash flow improved dramatically. No more chasing overdue invoices."
   }
 ];
 
@@ -54,9 +54,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-normal mb-4">Trusted by Traders</h2>
+          <h2 className="text-5xl font-normal mb-4">Trusted by Growing Businesses</h2>
           <p className="text-muted-foreground text-lg">
-            Join thousands of satisfied traders on CryptoTrade
+            Join hundreds of businesses scaling with AI automation
           </p>
         </motion.div>
 

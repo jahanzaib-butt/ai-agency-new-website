@@ -2,27 +2,27 @@ import { BarChart3, ShieldCheck, Wallet, ArrowUpDown } from "lucide-react";
 
 export const features = [
   {
-    title: "Advanced Trading Interface",
-    description: "Professional-grade trading tools with real-time market data and advanced charting capabilities.",
+    title: "AI-Powered Lead Generation",
+    description: "Advanced Meta ad campaigns with real-time optimization to deliver high-quality leads consistently.",
     icon: <BarChart3 className="w-6 h-6" />,
-    image: "/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png"
+    image: "/lovable-uploads/a31acf57-fd8b-4eb6-b5f6-dcf3f37ad243.png"
   },
   {
-    title: "Portfolio Management",
-    description: "Track your investments and monitor your gains with our comprehensive portfolio dashboard.",
+    title: "Lead Qualification & Nurturing",
+    description: "AI qualifies and nurtures leads automatically, ensuring your team focuses on high-intent prospects.",
     icon: <Wallet className="w-6 h-6" />,
-    image: "/lovable-uploads/7335619d-58a9-41ad-a233-f7826f56f3e9.png"
+    image: "/lovable-uploads/175ea417-654b-40cb-a710-2cc348b97b38.png"
   },
   {
-    title: "Security & Verification",
-    description: "Industry-leading security measures with KYC verification process to protect your assets.",
+    title: "Voice AI Appointment Setting",
+    description: "Human-like AI voice bot calls and books appointments directly with your leads automatically.",
     icon: <ShieldCheck className="w-6 h-6" />,
-    image: "/lovable-uploads/b6436838-5c1a-419a-9cdc-1f9867df073d.png"
+    image: "/lovable-uploads/94d792af-5be9-47d7-a286-226f6ed57c6b.png"
   },
   {
-    title: "Performance Analytics",
-    description: "Detailed analytics and credit scoring system to help you make informed decisions.",
+    title: "Custom Workflow Automation",
+    description: "Streamline operations with custom integrations connecting CRM, QuickBooks, and other tools.",
     icon: <ArrowUpDown className="w-6 h-6" />,
-    image: "/lovable-uploads/79f2b901-8a4e-42a5-939f-fae0828e0aef.png"
+    image: "/lovable-uploads/3048a644-aa4a-422d-bd41-120c4011648e.png"
   }
 ];
