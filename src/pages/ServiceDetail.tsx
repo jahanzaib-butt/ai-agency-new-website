@@ -5,6 +5,7 @@ import { services } from "@/config/services";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ResultsShowcase } from "@/components/services/ResultsShowcase";
 import { CaseStudiesSection } from "@/components/services/CaseStudiesSection";
+import { TestimonialsGallery } from "@/components/services/TestimonialsGallery";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -39,6 +40,8 @@ const ServiceDetail = () => {
       />
 
       <ResultsShowcase />
+      
+      <TestimonialsGallery />
       
       <CaseStudiesSection />
 

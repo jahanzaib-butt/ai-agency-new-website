@@ -167,11 +167,12 @@ export const testimonialStats = [
   {
     title: "500%",
     subtitle: "Average Lead Increase",
-    description: "Clients see dramatic lead generation improvements within 30 days"
+    description: "Clients see dramatic lead generation improvements within 30 days",
+    image: "/lovable-uploads/8b9c3e02-ce80-486a-acda-d6a5b7e5cf05.png"
   },
   {
     title: "$50M+",
-    subtitle: "Revenue Generated",
+    subtitle: "Revenue Generated", 
     description: "Total revenue generated for our clients through AI-powered campaigns"
   },
   {
@@ -200,45 +201,56 @@ export const caseStudies = [
   {
     industry: "SaaS Startup",
     challenge: "Low qualified lead generation",
-    solution: "AI-powered Meta ads with automated qualification",
+    solution: "AI-powered Meta ads with automated qualification", 
     results: [
       "300% increase in qualified leads",
       "60% reduction in cost per acquisition",
-      "$2M additional revenue in 6 months"
+      "View Full Case Study"
     ],
-    image: "/lovable-uploads/a31acf57-fd8b-4eb6-b5f6-dcf3f37ad243.png"
+    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
+    stats: "300% increase in qualified leads, 60% reduction in cost per acquisition"
   },
   {
-    industry: "E-commerce Brand",
+    industry: "E-commerce Brand", 
     challenge: "Poor conversion rates from ads",
     solution: "LinkedIn sourcing + AI voice appointment setting",
     results: [
       "250% boost in conversion rates",
-      "$2M additional revenue in 6 months",
-      "70% reduction in sales cycle time"
+      "$2M additional revenue in 6 months", 
+      "View Full Case Study"
     ],
-    image: "/lovable-uploads/175ea417-654b-40cb-a710-2cc348b97b38.png"
+    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
+    stats: "250% boost in conversion rates, $2M additional revenue in 6 months"
   },
   {
     industry: "Professional Services",
-    challenge: "Manual lead qualification process",
+    challenge: "Manual lead qualification process", 
     solution: "End-to-end AI automation workflow",
     results: [
       "400% growth in pipeline",
       "50% faster sales cycle",
-      "85% improvement in lead quality"
+      "View Full Case Study"
     ],
-    image: "/lovable-uploads/94d792af-5be9-47d7-a286-226f6ed57c6b.png"
+    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
+    stats: "400% growth in pipeline, 50% faster sales cycle"
   },
   {
     industry: "Manufacturing",
     challenge: "Low B2B lead generation",
     solution: "Custom automation + voice AI follow-ups",
     results: [
-      "180% increase in B2B leads",
+      "180% increase in B2B leads", 
       "70% of qualification process automated",
-      "90% reduction in manual tasks"
+      "View Full Case Study"
     ],
-    image: "/lovable-uploads/3048a644-aa4a-422d-bd41-120c4011648e.png"
+    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
+    stats: "180% increase in B2B leads, 70% of qualification process automated"
   }
+];
+
+export const performanceImages = [
+  "/lovable-uploads/b2523c62-4cf8-47f2-a4a1-829b8ac2c352.png",
+  "/lovable-uploads/6f334de1-78e9-44e9-a751-6d091ccb68ae.png", 
+  "/lovable-uploads/eff87813-0349-499f-b845-9b249837bc83.png",
+  "/lovable-uploads/ce0a05fa-818e-47c8-bf90-ef6b1cad2356.png"
 ];

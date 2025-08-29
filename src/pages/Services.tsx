@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { services } from "@/config/services";
 import { ResultsShowcase } from "@/components/services/ResultsShowcase";
 import { CaseStudiesSection } from "@/components/services/CaseStudiesSection";
+import { TestimonialsGallery } from "@/components/services/TestimonialsGallery";
 
 const Services = () => {
   return (
@@ -109,6 +110,9 @@ const Services = () => {
 
       {/* Results Showcase */}
       <ResultsShowcase />
+
+      {/* Performance Gallery */}
+      <TestimonialsGallery />
 
       {/* Case Studies */}
       <CaseStudiesSection />

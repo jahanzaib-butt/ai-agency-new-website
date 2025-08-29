@@ -20,6 +20,15 @@ export const ResultsShowcase = () => {
             See how we've transformed businesses across industries with our AI-powered
             lead generation and automation solutions.
           </p>
+          
+          {/* Main Results Image */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <img
+              src="/lovable-uploads/8b9c3e02-ce80-486a-acda-d6a5b7e5cf05.png"
+              alt="Key Performance metrics showing 500% lead increase, $50M+ revenue generated"
+              className="w-full rounded-xl glass"
+            />
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

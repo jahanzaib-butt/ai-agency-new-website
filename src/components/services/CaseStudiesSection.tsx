@@ -22,6 +22,15 @@ export const CaseStudiesSection = () => {
             See how we've transformed businesses across different industries with 
             our tailored AI automation and lead generation solutions.
           </p>
+          
+          {/* Case Studies Overview Image */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <img
+              src="/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png"
+              alt="Proven results across SaaS, E-commerce, Professional Services, and Manufacturing"
+              className="w-full rounded-xl glass"
+            />
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
