@@ -40,10 +40,10 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
-    { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    { name: "Workflows", href: "/workflows" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Navigation = () => {
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
             <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">GrowthAI</span>
+            <span className="font-bold text-base">Miixed Realities</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -67,23 +67,17 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => {
-                  if (item.onClick) {
-                    e.preventDefault();
-                    item.onClick();
-                  }
-                }}
                 className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 {item.name}
               </a>
             ))}
             <Button 
-              onClick={() => scrollToSection('cta')}
+              onClick={() => window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank')}
               size="sm"
               className="button-gradient"
             >
-              Get Started
+              Book a Call
             </Button>
           </div>
 
@@ -102,13 +96,7 @@ const Navigation = () => {
                       key={item.name}
                       href={item.href}
                       className="text-lg text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={(e) => {
-                        setIsMobileMenuOpen(false);
-                        if (item.onClick) {
-                          e.preventDefault();
-                          item.onClick();
-                        }
-                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </a>
@@ -116,11 +104,11 @@ const Navigation = () => {
                   <Button 
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
                     }}
                     className="button-gradient mt-4"
                   >
-                    Get Started
+                    Book a Call
                   </Button>
                 </div>
               </SheetContent>

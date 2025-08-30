@@ -1,94 +1,164 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Command } from "lucide-react";
+import { ArrowRight, Star, Play, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
-import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { Link } from "react-router-dom";
+import { services } from "@/config/services";
 
 const Index = () => {
+  const handleBookCall = () => {
+    window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
       
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative container px-4 pt-40 pb-20"
-      >
-        {/* Background */}
-        <div 
-          className="absolute inset-0 -z-10 bg-[#0A0A0A]"
-        />
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
-        >
-          <span className="text-sm font-medium">
-            <Command className="w-4 h-4 inline-block mr-2" />
-            AI-Powered Business Growth
-          </span>
-        </motion.div>
-        
-        <div className="max-w-4xl relative z-10">
-          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
-            <span className="text-gray-200">
-              <TextGenerateEffect words="Scale your business with" />
-            </span>
-            <br />
-            <span className="text-white font-medium">
-              <TextGenerateEffect words="AI automation & leads" />
-            </span>
-          </h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
-          >
-            Transform your business with AI-powered lead generation, automated qualification, and intelligent follow-ups. {" "}
-            <span className="text-white">Get more leads, close more deals, scale faster.</span>
-          </motion.p>
-          
+      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
+        <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 items-start"
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <Button size="lg" className="button-gradient">
-              Get Free Strategy Call
-            </Button>
-            <Button size="lg" variant="link" className="text-white">
-              View Our Services <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-8">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-sm font-medium text-white">
+                Trusted by 500+ businesses
+              </span>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white leading-tight">
+              Scale Your Business
+              <br />
+              <span className="text-gradient">With AI Automation</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              We help businesses generate <span className="text-white font-semibold">10x more qualified leads</span> using AI-powered 
+              automation, voice agents, and proven growth strategies.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+              <Button 
+                size="lg" 
+                className="button-gradient text-lg px-8 py-4 h-auto"
+                onClick={handleBookCall}
+              >
+                Book a Free Strategy Call
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              
+              <button className="flex items-center gap-3 text-white hover:text-primary transition-colors">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                  <Play className="w-5 h-5 ml-1" />
+                </div>
+                <span className="text-lg font-medium">Watch Case Study</span>
+              </button>
+            </div>
+
+            {/* Results Preview */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="glass rounded-xl p-6 text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500%</div>
+                <div className="text-gray-300">Average Lead Increase</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="glass rounded-xl p-6 text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10x</div>
+                <div className="text-gray-300">ROI for Clients</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="glass rounded-xl p-6 text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">90%</div>
+                <div className="text-gray-300">Automation Rate</div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
+      </section>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="relative mx-auto max-w-5xl mt-20"
-        >
-          <div className="glass rounded-xl overflow-hidden">
-            <img
-              src="/lovable-uploads/a31acf57-fd8b-4eb6-b5f6-dcf3f37ad243.png"
-              alt="AI Business Growth Dashboard"
-              className="w-full h-auto"
-            />
+      {/* Services Overview */}
+      <section className="py-20 bg-black">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              How We Scale Your Business
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              End-to-end AI automation solutions that generate leads, qualify prospects, 
+              and close deals while you focus on growing your business.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {services.slice(0, 4).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Link to={`/services/${service.id}`}>
+                  <Card className="glass-hover p-6 h-full cursor-pointer group">
+                    <div className="w-12 h-12 glass rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {service.subtitle}
+                    </p>
+                  </Card>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </motion.section>
+
+          <div className="text-center">
+            <Link to="/services">
+              <Button variant="outline" size="lg" className="glass-hover">
+                View All Services
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Logo Carousel */}
       <LogoCarousel />
@@ -98,10 +168,6 @@ const Index = () => {
         <FeaturesSection />
       </div>
 
-      {/* Pricing Section */}
-      <div id="pricing" className="bg-black">
-        <PricingSection />
-      </div>
 
       {/* Testimonials Section */}
       <div className="bg-black">
