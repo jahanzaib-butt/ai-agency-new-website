@@ -1,6 +1,7 @@
-import { Mail, MapPin, ArrowRight, Command } from "lucide-react";
+import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Footer = () => {
   const handleBookCall = () => {
@@ -14,10 +15,7 @@ const Footer = () => {
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
              {/* Company Info */}
              <div className="space-y-4">
-               <div className="flex items-center gap-3">
-                 <Command className="w-6 h-6 text-primary" />
-                 <span className="font-bold text-lg text-white">Miixed Realities</span>
-               </div>
+               <Logo size="md" />
                <p className="text-gray-300 leading-relaxed max-w-md text-sm">
                  We help businesses generate 10x more qualified leads using AI-powered automation, voice agents, and proven growth strategies.
                </p>
