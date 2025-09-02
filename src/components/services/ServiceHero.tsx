@@ -44,11 +44,20 @@ export const ServiceHero = ({
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="button-gradient">
+            <Button 
+              size="lg" 
+              className="button-gradient"
+              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
+            >
               Get Started Today
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="glass-hover">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="glass-hover"
+              onClick={() => window.location.href = '/case-studies'}
+            >
               View Case Studies
             </Button>
           </div>

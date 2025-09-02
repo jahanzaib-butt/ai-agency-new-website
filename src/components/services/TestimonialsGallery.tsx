@@ -3,12 +3,12 @@ import { Card } from "@/components/ui/card";
 
 const testimonialImages = [
   {
-    image: "/lovable-uploads/8b9c3e02-ce80-486a-acda-d6a5b7e5cf05.png",
+    image: "/lovable-uploads/original-6e6ebec1684e7535a9564d4c955f934a.png",
     title: "Key Performance Metrics",
     description: "Real results from our AI-powered campaigns showing 500% lead increases and $50M+ revenue generated"
   },
   {
-    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png", 
+    image: "/lovable-uploads/b2b2.jpg", 
     title: "Industry Success Stories",
     description: "Proven results across SaaS, E-commerce, Professional Services, and Manufacturing sectors"
   }
@@ -31,7 +31,7 @@ const performanceScreenshots = [
     description: "Complete sales funnel overview with 20% conversion rates and $130K pipeline value"
   },
   {
-    image: "/lovable-uploads/ce0a05fa-818e-47c8-bf90-ef6b1cad2356.png",
+    image: "/lovable-uploads/CaseStudy5.png",
     title: "Detailed Results Breakdown",
     description: "Cost analysis showing optimized spend and high-quality lead generation"
   }

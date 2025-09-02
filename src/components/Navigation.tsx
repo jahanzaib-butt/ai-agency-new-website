@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Command, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ const Navigation = () => {
   const navItems = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Workflows", href: "/workflows" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -56,7 +58,10 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <div className="flex items-center gap-2">
+          <div 
+            className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => navigate('/')}
+          >
             <Command className="w-5 h-5 text-primary" />
             <span className="font-bold text-base">Miixed Realities</span>
           </div>
@@ -73,7 +78,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button 
-              onClick={() => window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank')}
+              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
               size="sm"
               className="button-gradient"
             >
@@ -104,7 +109,7 @@ const Navigation = () => {
                   <Button 
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
+                      window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank');
                     }}
                     className="button-gradient mt-4"
                   >

@@ -3,8 +3,16 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { caseStudies } from "@/config/services";
+import { useNavigate } from "react-router-dom";
 
 export const CaseStudiesSection = () => {
+  const navigate = useNavigate();
+
+  const handleCaseStudyClick = (industry: string) => {
+    const formattedIndustry = industry.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/case-study/${formattedIndustry}`);
+  };
+
   return (
     <section className="py-20 bg-black">
       <div className="container px-4">
@@ -42,7 +50,8 @@ export const CaseStudiesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
-              <Card className="glass-hover p-8 h-full">
+                             <Card className="glass-hover p-8 h-full">
+
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 glass rounded-lg flex items-center justify-center">
                     <span className="text-primary font-bold text-lg">
@@ -77,7 +86,11 @@ export const CaseStudiesSection = () => {
                   </ul>
                 </div>
 
-                <Button variant="outline" className="w-full glass-hover">
+                <Button 
+                  variant="outline" 
+                  className="w-full glass-hover"
+                  onClick={() => handleCaseStudyClick(study.industry)}
+                >
                   View Full Case Study
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>

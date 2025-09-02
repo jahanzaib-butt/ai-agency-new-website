@@ -20,29 +20,87 @@ const Contact = () => {
   });
 
   const handleBookCall = () => {
-    window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
+    window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      message: ''
-    });
+    
+    try {
+      // Send data to n8n webhook
+      const response = await fetch('https://miixedrealities.app.n8n.cloud/webhook/e330816b-bf64-4440-b37d-7e8c20c70074', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_form'
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending form:', error);
+      toast({
+        title: "Error Sending Message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    
+    if (name === 'phone') {
+      // Format phone number as user types
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData({
+        ...formData,
+        [name]: formattedPhone
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  };
+
+  const formatPhoneNumber = (value: string): string => {
+    // Remove all non-digits
+    const phoneNumber = value.replace(/\D/g, '');
+    
+    // Limit to 10 digits
+    if (phoneNumber.length > 10) {
+      return value.slice(0, -1);
+    }
+    
+    // Format based on length
+    if (phoneNumber.length === 0) return '';
+    if (phoneNumber.length <= 3) return `(${phoneNumber}`;
+    if (phoneNumber.length <= 6) return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    if (phoneNumber.length <= 10) return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
+    
+    return value;
   };
 
   return (
@@ -149,18 +207,20 @@ const Contact = () => {
                         className="bg-white/5 border-white/10 text-white"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-white mb-2">
-                        Phone
-                      </label>
-                      <Input
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Your phone number"
-                        className="bg-white/5 border-white/10 text-white"
-                      />
-                    </div>
+                                         <div>
+                       <label className="block text-sm font-medium text-white mb-2">
+                         Phone
+                       </label>
+                       <Input
+                         name="phone"
+                         type="tel"
+                         value={formData.phone}
+                         onChange={handleInputChange}
+                         placeholder="(555) 123-4567"
+                         maxLength={14}
+                         className="bg-white/5 border-white/10 text-white"
+                       />
+                     </div>
                   </div>
                   
                   <div>
@@ -216,7 +276,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-white font-medium">Email Us</div>
-                      <div className="text-gray-400 text-sm">hello@miixedrealities.com</div>
+                      <div className="text-gray-400 text-sm">miixedrealities@gmail.com</div>
                     </div>
                   </div>
                   
@@ -226,7 +286,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-white font-medium">Call Us</div>
-                      <div className="text-gray-400 text-sm">+1 (555) 123-4567</div>
+                      <div className="text-gray-400 text-sm">+1 (915) 841-7771</div>
                     </div>
                   </div>
                 </div>

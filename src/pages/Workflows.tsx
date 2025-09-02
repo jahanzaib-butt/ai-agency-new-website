@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const Workflows = () => {
   const handleBookCall = () => {
-    window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
+    window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank');
   };
 
   const workflows = [
@@ -230,7 +230,7 @@ const Workflows = () => {
               className="glass rounded-xl overflow-hidden"
             >
               <img
-                src="/lovable-uploads/a31acf57-fd8b-4eb6-b5f6-dcf3f37ad243.png"
+                src="/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png"
                 alt="Lead Generation Dashboard"
                 className="w-full h-48 object-cover"
               />
@@ -248,7 +248,7 @@ const Workflows = () => {
               className="glass rounded-xl overflow-hidden"
             >
               <img
-                src="/lovable-uploads/175ea417-654b-40cb-a710-2cc348b97b38.png"
+                src="/lovable-uploads/original-6e6ebec1684e7535a9564d4c955f934a.png"
                 alt="Voice AI Performance"
                 className="w-full h-48 object-cover"
               />
@@ -266,7 +266,7 @@ const Workflows = () => {
               className="glass rounded-xl overflow-hidden"
             >
               <img
-                src="/lovable-uploads/94d792af-5be9-47d7-a286-226f6ed57c6b.png"
+                src="/lovable-uploads/ce0a05fa-818e-47c8-bf90-ef6b1cad2356.png"
                 alt="Automation Analytics"
                 className="w-full h-48 object-cover"
               />
@@ -302,7 +302,12 @@ const Workflows = () => {
                   Book Strategy Call
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="glass-hover">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="glass-hover"
+                  onClick={() => window.location.href = '/case-studies'}
+                >
                   View Case Studies
                 </Button>
               </div>

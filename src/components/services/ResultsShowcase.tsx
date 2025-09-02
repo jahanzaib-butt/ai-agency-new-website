@@ -70,7 +70,10 @@ export const ResultsShowcase = () => {
               Join hundreds of businesses that have transformed their lead generation 
               and sales processes with our AI-powered solutions.
             </p>
-            <button className="button-gradient px-8 py-3 rounded-full font-semibold">
+            <button 
+              className="button-gradient px-8 py-3 rounded-full font-semibold"
+              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
+            >
               Book Your Strategy Call
             </button>
           </div>

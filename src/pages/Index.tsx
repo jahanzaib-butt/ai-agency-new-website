@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Star, Play, CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Star, Play, CheckCircle, X, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -9,11 +9,76 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { services } from "@/config/services";
+import { useState, useRef, useEffect } from "react";
 
 const Index = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const handleBookCall = () => {
-    window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1M8zrqNjNMBr7Hv3rBLPZ2Q3xE', '_blank');
+    window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank');
   };
+
+  const handleVideoToggle = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleMuteToggle = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      }
+    }
+  };
+
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true);
+    setIsPlaying(false);
+    setIsMuted(false);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setIsPlaying(false);
+  };
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+      }
+    };
+
+    if (isVideoModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isVideoModalOpen]);
 
   return (
     <div className="min-h-screen bg-black text-foreground">
@@ -39,10 +104,10 @@ const Index = () => {
               </span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white leading-tight">
-              Scale Your Business
+            <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white leading-tight">
+              Scale Your Business With
               <br />
-              <span className="text-gradient">With AI Automation</span>
+              <span className="text-gradient"> AI Automation</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -57,10 +122,13 @@ const Index = () => {
                 onClick={handleBookCall}
               >
                 Book a Free Strategy Call
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-1 w-4 h-4" />
               </Button>
               
-              <button className="flex items-center gap-3 text-white hover:text-primary transition-colors">
+              <button 
+                className="flex items-center gap-3 text-white hover:text-primary transition-colors"
+                onClick={openVideoModal}
+              >
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
                   <Play className="w-5 h-5 ml-1" />
                 </div>
@@ -196,10 +264,14 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join hundreds of businesses who have transformed their growth with our AI-powered solutions.
           </p>
-          <Button size="lg" className="button-gradient">
-            Book Strategy Call
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+                     <Button 
+             size="lg" 
+             className="button-gradient"
+             onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
+           >
+             Book Strategy Call
+             <ArrowRight className="ml-2 w-4 h-4" />
+           </Button>
         </motion.div>
       </section>
 
@@ -207,6 +279,98 @@ const Index = () => {
       <div className="bg-black">
         <Footer />
       </div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeVideoModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl mx-4 aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Video Player */}
+              <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-gray-800">
+                <video
+                  ref={videoRef}
+                  src="/lovable-uploads/ecommerace 1 for testimonial.mp4"
+                  className="w-full h-full object-contain"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onEnded={() => setIsPlaying(false)}
+                  controls={false}
+                />
+                
+                {/* Video Controls Overlay */}
+                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                  <div className="flex items-center gap-4">
+                    <Button
+                      size="lg"
+                      variant="ghost"
+                      onClick={handleVideoToggle}
+                      className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
+                    >
+                      {isPlaying ? (
+                        <div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center">
+                          <div className="w-1 h-3 bg-white rounded-sm"></div>
+                          <div className="w-1 h-3 bg-white rounded-sm ml-1"></div>
+                        </div>
+                      ) : (
+                        <Play className="w-6 h-6 ml-1" />
+                      )}
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="ghost"
+                      onClick={handleMuteToggle}
+                      className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
+                    >
+                      {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                    </Button>
+                  </div>
+                  <Button
+                    size="lg"
+                    variant="ghost"
+                    onClick={handleFullscreen}
+                    className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
+                  >
+                    <Maximize2 className="w-5 h-5" />
+                  </Button>
+                </div>
+                
+                {/* Video Info Overlay */}
+                <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10">
+                  <div className="text-white text-sm font-medium">
+                    Urban Balance Clinic Case Study
+                  </div>
+                  <div className="text-gray-300 text-xs">
+                    Duration: ~1 minute
+                  </div>
+                </div>
+              </div>
+              
+              {/* Close Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={closeVideoModal}
+                className="absolute top-4 right-4 w-10 h-10 bg-black/60 backdrop-blur-md text-white hover:text-primary hover:bg-white/10 transition-all duration-300 rounded-full"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

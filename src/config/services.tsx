@@ -199,28 +199,60 @@ export const testimonialStats = [
 
 export const caseStudies = [
   {
-    industry: "SaaS Startup",
-    challenge: "Low qualified lead generation",
-    solution: "AI-powered Meta ads with automated qualification", 
+    industry: "Chiropractor",
+    challenge: "Inefficient manual appointment scheduling and operational bottlenecks",
+    solution: "Comprehensive practice management automation and patient engagement systems", 
     results: [
-      "300% increase in qualified leads",
-      "60% reduction in cost per acquisition",
+      "100% elimination of scheduling errors",
+      "Significant improvement in patient retention rates",
+      "50% reduction in administrative workload",
       "View Full Case Study"
     ],
-    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
-    stats: "300% increase in qualified leads, 60% reduction in cost per acquisition"
+    image: "/lovable-uploads/b2b1.jpg",
+    video: "/lovable-uploads/WhatsApp Video 2025-08-27 at 11.27.43 PM.mp4",
+    stats: "100% elimination of scheduling errors, significant improvement in patient retention rates",
+    description: "We partnered with Dr. Olga's chiropractic clinic in Dallas to revolutionize their practice operations through advanced automation and practice management systems. Our comprehensive solution streamlined appointment scheduling, enhanced patient communication, and optimized staff workflows to maximize clinical efficiency.",
+    process: [
+      "Advanced automated appointment scheduling platform",
+      "Integrated practice management workflow optimization",
+      "Intelligent patient retention and engagement systems",
+      "Comprehensive staff efficiency and productivity enhancements"
+    ],
+    testimonials: [
+      {
+        quote: "Mixed Realities transformed our practice operations completely. Their sophisticated automation solutions eliminated scheduling errors entirely and significantly improved our patient retention. I can now focus entirely on patient care while our systems handle all administrative tasks seamlessly.",
+        author: "Dr. Olga",
+        position: "Owner, Dallas Chiropractic Clinic"
+      }
+    ]
   },
   {
-    industry: "E-commerce Brand", 
-    challenge: "Poor conversion rates from ads",
-    solution: "LinkedIn sourcing + AI voice appointment setting",
+    industry: "Chiro Spot",
+    challenge: "Inefficient manual processes and operational bottlenecks",
+    solution: "Comprehensive business automation and workflow optimization systems", 
     results: [
-      "250% boost in conversion rates",
-      "$2M additional revenue in 6 months", 
+      "100% automation of daily operations",
+      "Significant improvement in business efficiency",
+      "50% reduction in administrative workload",
       "View Full Case Study"
     ],
     image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
-    stats: "250% boost in conversion rates, $2M additional revenue in 6 months"
+    video: "/lovable-uploads/WhatsApp Video 2025-08-27 at 11.27.43 PM (3).mp4",
+    stats: "100% automation of daily operations, significant improvement in business efficiency",
+    description: "We partnered with Jenna's small chiro spot near the coast to revolutionize their operations through advanced automation and workflow optimization systems. Our comprehensive solution streamlined daily processes, enhanced customer communication, and optimized business workflows to maximize operational efficiency.",
+    process: [
+      "Advanced automated booking and reminder systems",
+      "Integrated business workflow optimization",
+      "Intelligent customer check-in and communication systems",
+      "Comprehensive administrative efficiency and productivity enhancements"
+    ],
+    testimonials: [
+      {
+        quote: "Mixed Realities transformed our business operations completely. Their sophisticated automation solutions eliminated manual processes entirely and significantly improved our business efficiency. I finally feel like a real business owner instead of just playing catch-up.",
+        author: "Jenna",
+        position: "Owner, Coastal Chiro Spot"
+      }
+    ]
   },
   {
     industry: "Professional Services",
@@ -232,19 +264,50 @@ export const caseStudies = [
       "View Full Case Study"
     ],
     image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
-    stats: "400% growth in pipeline, 50% faster sales cycle"
+    video: "/lovable-uploads/WhatsApp Video 2025-08-27 at 11.27.43 PM (2).mp4",
+    stats: "400% growth in pipeline, 50% faster sales cycle",
+    description: "A professional services firm was spending too much time on manual lead qualification. We built an end-to-end AI automation workflow that streamlined their entire sales process.",
+    process: [
+      "Automated lead capture and qualification",
+      "Intelligent lead scoring and routing",
+      "AI-powered follow-up sequences",
+      "Sales pipeline automation"
+    ],
+    testimonials: [
+      {
+        quote: "The AI automation workflow increased our pipeline by 400% and cut our sales cycle in half. It's been a game-changer for our business.",
+        author: "David Rodriguez",
+        position: "Managing Partner, Elite Consulting"
+      }
+    ]
   },
   {
-    industry: "Manufacturing",
-    challenge: "Low B2B lead generation",
-    solution: "Custom automation + voice AI follow-ups",
+    industry: "Urban Balance Clinic", 
+    challenge: "Manual appointment scheduling and administrative overload",
+    solution: "Comprehensive clinic automation and patient management systems",
     results: [
-      "180% increase in B2B leads", 
-      "70% of qualification process automated",
+      "100% appointment automation",
+      "80% reduction in no-shows",
+      "70% time savings for staff",
       "View Full Case Study"
     ],
-    image: "/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png",
-    stats: "180% increase in B2B leads, 70% of qualification process automated"
+    image: "/lovable-uploads/CaseStudy5.png",
+    video: "/lovable-uploads/ecommerace1.mp4",
+    stats: "100% appointment automation, 80% reduction in no-shows, 70% time savings",
+    description: "Lauren from Seattle runs Urban Balance Clinic, a chiropractic practice that was struggling with manual appointment scheduling and administrative overload. Before working with us, her day felt like a constant juggling act - treating patients while answering phone calls, booking appointments, and managing follow-ups. We implemented comprehensive automation that transformed her practice operations.",
+    process: [
+      "Automated online appointment booking system",
+      "Intelligent reminder and rescheduling automation",
+      "Patient communication and follow-up systems",
+      "Staff workflow optimization and time management"
+    ],
+    testimonials: [
+      {
+        quote: "Before I started working with Johnny and Mixed Realities, my day felt like a constant juggling act. I was treating patients, answering phone calls, booking appointments, and trying to remember who needed a follow-up. It felt like I had two full-time jobs - chiropractor and receptionist. Johnny came in and completely changed the game. He set up automation so that patients can book online, get reminders, and even reschedule all without me or my team having to step in. It's hands-off and super reliable.",
+        author: "Lauren",
+        position: "Owner, Urban Balance Clinic, Seattle"
+      }
+    ]
   }
 ];
 
