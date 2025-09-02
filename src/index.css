@@ -13,7 +13,7 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
-    --primary: 142 84% 58%;
+    --primary: 220 100% 60%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 9%;
     --secondary-foreground: 0 0% 100%;
@@ -25,7 +25,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 12%;
     --input: 0 0% 12%;
-    --ring: 142 84% 58%;
+    --ring: 220 100% 60%;
     --radius: 0.75rem;
   }
 }
@@ -66,9 +66,30 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#22c55e];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600;
 }
 
 .button-gradient {
-  @apply bg-gradient-to-r from-primary to-[#22c55e] hover:opacity-90 transition-opacity rounded-full;
+  @apply bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700 hover:opacity-90 transition-opacity rounded-full;
+}
+
+/* Additional brand-specific utility classes */
+.glass-blue {
+  @apply bg-blue-500/5 backdrop-blur-lg border border-blue-500/20;
+}
+
+.glass-purple {
+  @apply bg-purple-500/5 backdrop-blur-lg border border-purple-500/20;
+}
+
+.text-brand-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600;
+}
+
+.bg-brand-gradient {
+  @apply bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700;
+}
+
+.border-brand-gradient {
+  @apply border border-transparent bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700 bg-clip-border;
 }

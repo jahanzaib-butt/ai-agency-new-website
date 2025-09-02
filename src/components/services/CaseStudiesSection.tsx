@@ -31,14 +31,7 @@ export const CaseStudiesSection = () => {
             our tailored AI automation and lead generation solutions.
           </p>
           
-          {/* Case Studies Overview Image */}
-          <div className="mt-12 max-w-5xl mx-auto">
-            <img
-              src="/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png"
-              alt="Proven results across SaaS, E-commerce, Professional Services, and Manufacturing"
-              className="w-full rounded-xl glass"
-            />
-          </div>
+
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -54,7 +47,7 @@ export const CaseStudiesSection = () => {
 
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 glass rounded-lg flex items-center justify-center">
-                    <span className="text-primary font-bold text-lg">
+                    <span className="text-blue-400 font-bold text-lg">
                       {study.industry.split(' ')[0][0]}
                     </span>
                   </div>
@@ -79,7 +72,7 @@ export const CaseStudiesSection = () => {
                   <ul className="space-y-3">
                     {study.results.map((result, resultIndex) => (
                       <li key={resultIndex} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
                         <span className="text-gray-300">{result}</span>
                       </li>
                     ))}

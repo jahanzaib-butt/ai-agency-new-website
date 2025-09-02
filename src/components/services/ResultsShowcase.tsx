@@ -21,14 +21,7 @@ export const ResultsShowcase = () => {
             lead generation and automation solutions.
           </p>
           
-          {/* Main Results Image */}
-          <div className="mt-12 max-w-4xl mx-auto">
-            <img
-              src="/lovable-uploads/8b9c3e02-ce80-486a-acda-d6a5b7e5cf05.png"
-              alt="Key Performance metrics showing 500% lead increase, $50M+ revenue generated"
-              className="w-full rounded-xl glass"
-            />
-          </div>
+
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -41,7 +34,7 @@ export const ResultsShowcase = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
               <Card className="glass-hover p-8 text-center h-full">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-4">
                   {stat.title}
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">

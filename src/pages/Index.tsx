@@ -242,37 +242,178 @@ const Index = () => {
         <TestimonialsSection />
       </div>
 
+      {/* AI Revolution Section */}
+      <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        
+        <div className="container px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block mb-6 px-6 py-3 glass rounded-full border border-blue-500/20">
+              <span className="text-sm font-medium text-blue-400">
+                🚀 The AI Revolution is Here
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+              Why Businesses Choose{" "}
+              <span className="text-gradient">AI Over Traditional</span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
+              While others struggle with outdated methods, our clients are already 
+              experiencing the future of business automation.
+            </p>
+          </motion.div>
+
+          {/* Comparison Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            {/* Traditional Methods */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="glass rounded-2xl p-8 border border-red-500/20"
+            >
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <h3 className="text-2xl font-bold text-red-400 mb-2">Traditional Methods</h3>
+                <p className="text-gray-400">The old way of doing business</p>
+              </div>
+              
+              <div className="space-y-4">
+                {[
+                  "Manual lead generation (2-5 leads/day)",
+                  "Human-dependent follow-ups",
+                  "Limited working hours (9-5)",
+                  "High cost per acquisition",
+                  "Inconsistent results",
+                  "Slow response times"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <X className="w-3 h-3 text-red-400" />
+                    </div>
+                    <span className="text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* AI-Powered Approach */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="glass rounded-2xl p-8 border border-blue-500/20"
+            >
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">AI-Powered Approach</h3>
+                <p className="text-gray-400">The future of business automation</p>
+              </div>
+              
+              <div className="space-y-4">
+                {[
+                  "Automated lead generation (50-200 leads/day)",
+                  "AI-powered nurturing sequences",
+                  "24/7 intelligent automation",
+                  "90% lower cost per acquisition",
+                  "Consistent, predictable results",
+                  "Instant response times"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-3 h-3 text-blue-400" />
+                    </div>
+                    <span className="text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Transformation Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass rounded-3xl p-12 max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                The Transformation is Real
+              </h3>
+              <p className="text-gray-300">
+                See the dramatic difference AI automation makes in just 30 days
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { number: "10x", label: "More Leads", color: "text-blue-400", icon: "📈" },
+                { number: "90%", label: "Cost Reduction", color: "text-purple-400", icon: "💰" },
+                { number: "24/7", label: "Automation", color: "text-blue-500", icon: "⚡" },
+                { number: "500%", label: "ROI Increase", color: "text-purple-500", icon: "🎯" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl mb-2">{stat.icon}</div>
+                  <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color}`}>
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-300 text-sm">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="container px-4 py-20 relative bg-black">
-        <div 
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage: 'url("/lovable-uploads/21f3edfb-62b5-4e35-9d03-7339d803b980.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-[#0A0A0A]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center relative z-10"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to 10x your lead generation?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join hundreds of businesses who have transformed their growth with our AI-powered solutions.
-          </p>
-                     <Button 
-             size="lg" 
-             className="button-gradient"
-             onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
-           >
-             Book Strategy Call
-             <ArrowRight className="ml-2 w-4 h-4" />
-           </Button>
-        </motion.div>
+      <section className="py-20 bg-black">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="glass rounded-2xl p-12 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Ready to 10x Your Lead Generation?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join hundreds of businesses who have transformed their growth with our AI-powered solutions.
+              </p>
+              <Button 
+                size="lg" 
+                className="button-gradient"
+                onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SDyHwKWYcg7mVvHFazxXAddXR_70D5KyLtIAWMJcT1l0WI08qT2y3idlF6UTipLpX2RBPorFS', '_blank')}
+              >
+                Book Strategy Call
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Footer */}

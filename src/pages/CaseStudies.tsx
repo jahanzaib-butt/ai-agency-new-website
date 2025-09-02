@@ -72,14 +72,7 @@ const CaseStudies = () => {
               our AI-powered lead generation and automation solutions.
             </p>
             
-            {/* Case Studies Overview Image */}
-            <div className="mt-12 max-w-5xl mx-auto">
-              <img
-                src="/lovable-uploads/c74292d2-1085-4460-862a-809b6a937dfa.png"
-                alt="Proven results across SaaS, E-commerce, Professional Services, and Manufacturing"
-                className="w-full rounded-xl glass"
-              />
-            </div>
+
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -138,6 +131,135 @@ const CaseStudies = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Transformation Journey Section */}
+      <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        
+        <div className="container px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block mb-6 px-6 py-3 glass rounded-full border border-blue-500/20">
+              <span className="text-sm font-medium text-blue-400">
+                ✨ The AI Transformation Journey
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+              From <span className="text-gray-400">Struggling</span> to{" "}
+              <span className="text-gradient">Dominating</span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
+              Every successful business transformation starts with a single decision. 
+              See the journey our clients take from challenge to breakthrough.
+            </p>
+          </motion.div>
+
+          {/* Journey Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                step: "01",
+                title: "The Challenge",
+                description: "Struggling with low lead quality, manual processes, and missed opportunities",
+                icon: "🎯",
+                color: "text-blue-400"
+              },
+              {
+                step: "02", 
+                title: "The Discovery",
+                description: "Understanding how AI automation can revolutionize your entire sales funnel",
+                icon: "💡",
+                color: "text-purple-400"
+              },
+              {
+                step: "03",
+                title: "The Breakthrough",
+                description: "Witnessing 300-500% increases in qualified leads and revenue growth",
+                icon: "🚀",
+                color: "text-blue-500"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="relative"
+              >
+                <div className="glass-hover p-8 rounded-2xl h-full text-center relative overflow-hidden">
+                  {/* Step Number */}
+                  <div className="absolute top-4 right-4 text-6xl font-bold text-gray-800/20">
+                    {item.step}
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  
+                  {/* Content */}
+                  <h3 className={`text-2xl font-bold mb-4 ${item.color}`}>
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                  
+                  {/* Connecting Line (except for last item) */}
+                  {index < 2 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transform -translate-y-1/2"></div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Success Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass rounded-3xl p-12 max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                The Numbers Don't Lie
+              </h3>
+              <p className="text-gray-300">
+                Our clients consistently achieve remarkable results within the first 90 days
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { number: "500%", label: "Average Lead Increase", color: "text-blue-400" },
+                { number: "$50M+", label: "Revenue Generated", color: "text-purple-400" },
+                { number: "95%", label: "Client Retention", color: "text-blue-500" },
+                { number: "48hr", label: "Setup Time", color: "text-purple-500" }
+              ].map((metric, index) => (
+                <div key={index} className="text-center">
+                  <div className={`text-4xl md:text-5xl font-bold mb-2 ${metric.color}`}>
+                    {metric.number}
+                  </div>
+                  <div className="text-gray-300 text-sm">
+                    {metric.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -129,12 +129,57 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="glass rounded-xl overflow-hidden">
-                <img
-                  src="/lovable-uploads/a31acf57-fd8b-4eb6-b5f6-dcf3f37ad243.png"
-                  alt="AI Automation Dashboard"
-                  className="w-full h-auto"
-                />
+              {/* AI Innovation Timeline */}
+              <div className="glass rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                  Our Innovation Journey
+                </h3>
+                
+                <div className="space-y-6">
+                  {[
+                    {
+                      year: "2023",
+                      title: "Company Founded",
+                      description: "Started with a vision to democratize AI automation",
+                      icon: "🚀",
+                      color: "border-blue-500/30"
+                    },
+                    {
+                      year: "2023",
+                      title: "First AI System",
+                      description: "Built our proprietary lead generation automation",
+                      icon: "🤖",
+                      color: "border-purple-500/30"
+                    },
+                    {
+                      year: "2024",
+                      title: "100+ Clients",
+                      description: "Reached milestone of 100 successful implementations",
+                      icon: "📈",
+                      color: "border-blue-500/30"
+                    },
+                    {
+                      year: "2024",
+                      title: "$50M+ Generated",
+                      description: "Helped clients generate over $50M in additional revenue",
+                      icon: "💰",
+                      color: "border-purple-500/30"
+                    }
+                  ].map((milestone, index) => (
+                    <div key={index} className={`flex items-start gap-4 p-4 rounded-xl border-l-4 ${milestone.color} bg-white/5`}>
+                      <div className="text-2xl flex-shrink-0">{milestone.icon}</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="text-sm font-bold text-blue-400 bg-blue-500/20 px-2 py-1 rounded">
+                            {milestone.year}
+                          </span>
+                          <h4 className="text-lg font-bold text-white">{milestone.title}</h4>
+                        </div>
+                        <p className="text-gray-300 text-sm">{milestone.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>
