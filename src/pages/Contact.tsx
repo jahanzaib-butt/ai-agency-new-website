@@ -16,6 +16,7 @@ const Contact = () => {
     email: '',
     company: '',
     phone: '',
+    budget: '',
     message: ''
   });
 
@@ -52,6 +53,7 @@ const Contact = () => {
           email: '',
           company: '',
           phone: '',
+          budget: '',
           message: ''
         });
       } else {
@@ -221,6 +223,74 @@ const Contact = () => {
                          className="bg-white/5 border-white/10 text-white"
                        />
                      </div>
+                  </div>
+                  
+                  {/* Budget Section */}
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-4">
+                      What's your budget range? *
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                      {[
+                        { value: 'under-5k', label: 'Under $5K', desc: 'Starter package' },
+                        { value: '5k-15k', label: '$5K - $15K', desc: 'Growth package' },
+                        { value: '15k-50k', label: '$15K - $50K', desc: 'Scale package' },
+                        { value: '50k-plus', label: '$50K+', desc: 'Enterprise package' }
+                      ].map((option) => (
+                        <motion.div
+                          key={option.value}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="relative"
+                        >
+                          <input
+                            type="radio"
+                            id={option.value}
+                            name="budget"
+                            value={option.value}
+                            checked={formData.budget === option.value}
+                            onChange={handleInputChange}
+                            className="sr-only"
+                            required
+                          />
+                          <label
+                            htmlFor={option.value}
+                            className={`block p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+                              formData.budget === option.value
+                                ? 'border-blue-400 bg-blue-500/10 shadow-lg shadow-blue-500/20'
+                                : 'border-white/10 bg-white/5 hover:border-blue-400/50 hover:bg-blue-500/5'
+                            }`}
+                          >
+                            <div className="text-center">
+                              <div className={`font-semibold text-sm mb-1 ${
+                                formData.budget === option.value ? 'text-blue-400' : 'text-white'
+                              }`}>
+                                {option.label}
+                              </div>
+                              <div className={`text-xs ${
+                                formData.budget === option.value ? 'text-blue-300' : 'text-gray-400'
+                              }`}>
+                                {option.desc}
+                              </div>
+                            </div>
+                            {formData.budget === option.value && (
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="absolute top-2 right-2 w-5 h-5 bg-blue-400 rounded-full flex items-center justify-center"
+                              >
+                                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                              </motion.div>
+                            )}
+                          </label>
+                        </motion.div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-gray-400 mt-3">
+                      💡 This helps us tailor the perfect solution for your business needs
+                    </p>
                   </div>
                   
                   <div>

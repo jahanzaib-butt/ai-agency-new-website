@@ -448,55 +448,9 @@ const Index = () => {
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onEnded={() => setIsPlaying(false)}
-                  controls={false}
+                  controls={true}
+                  playsInline
                 />
-                
-                {/* Video Controls Overlay */}
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                  <div className="flex items-center gap-4">
-                    <Button
-                      size="lg"
-                      variant="ghost"
-                      onClick={handleVideoToggle}
-                      className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                    >
-                      {isPlaying ? (
-                        <div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center">
-                          <div className="w-1 h-3 bg-white rounded-sm"></div>
-                          <div className="w-1 h-3 bg-white rounded-sm ml-1"></div>
-                        </div>
-                      ) : (
-                        <Play className="w-6 h-6 ml-1" />
-                      )}
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="ghost"
-                      onClick={handleMuteToggle}
-                      className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                    >
-                      {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-                    </Button>
-                  </div>
-                  <Button
-                    size="lg"
-                    variant="ghost"
-                    onClick={handleFullscreen}
-                    className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                  >
-                    <Maximize2 className="w-5 h-5" />
-                  </Button>
-                </div>
-                
-                {/* Video Info Overlay */}
-                <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10">
-                  <div className="text-white text-sm font-medium">
-                    Urban Balance Clinic Case Study
-                  </div>
-                  <div className="text-gray-300 text-xs">
-                    Duration: ~1 minute
-                  </div>
-                </div>
               </div>
               
               {/* Close Button */}

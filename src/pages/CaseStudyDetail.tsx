@@ -125,81 +125,43 @@ const CaseStudyDetail = () => {
           </div>
         </motion.div>
 
-                 {/* Video Section */}
+                 {/* Video Section - Mobile Optimized */}
          <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8, delay: 0.2 }}
            className="mb-16"
          >
-           <Card className="glass-hover p-8">
-             <div className="text-center mb-8">
-               <h2 className="text-3xl font-bold text-white mb-4">Case Study Video</h2>
-               <p className="text-gray-400 text-lg">
+           <Card className="glass-hover p-4 md:p-8">
+             <div className="text-center mb-6 md:mb-8">
+               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">Case Study Video</h2>
+               <p className="text-gray-400 text-base md:text-lg">
                  Watch how we transformed {caseStudy.industry.toLowerCase()} with our AI-powered solutions
                </p>
              </div>
              
-                           <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl">
-                <div className="aspect-video bg-black flex items-center justify-center">
-                                     <video
-                     id="case-study-video"
-                     src={videoSrc}
-                     className="w-full h-full object-contain"
-                     onPlay={() => setIsPlaying(true)}
-                     onPause={() => setIsPlaying(false)}
-                     controls={false}
-                   />
-                </div>
-               
-               {/* Video Controls Overlay */}
-               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                 <div className="flex items-center gap-4">
-                   <Button
-                     size="lg"
-                     variant="ghost"
-                     onClick={handleVideoToggle}
-                     className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                   >
-                     {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-1" />}
-                   </Button>
-                   <Button
-                     size="lg"
-                     variant="ghost"
-                     onClick={handleMuteToggle}
-                     className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                   >
-                     {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-                   </Button>
-                 </div>
-                 <Button
-                   size="lg"
-                   variant="ghost"
-                   onClick={handleFullscreen}
-                   className="text-white hover:text-primary hover:bg-white/10 transition-all duration-300"
-                 >
-                   <Maximize2 className="w-5 h-5" />
-                 </Button>
+             <div className="relative rounded-xl md:rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl">
+               <div className="aspect-video bg-black flex items-center justify-center">
+                 <video
+                   id="case-study-video"
+                   src={videoSrc}
+                   className="w-full h-full object-contain"
+                   onPlay={() => setIsPlaying(true)}
+                   onPause={() => setIsPlaying(false)}
+                   controls={true}
+                   playsInline
+                   preload="metadata"
+                 />
                </div>
-               
-               {/* Video Info Overlay */}
-               <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10">
-                 <div className="text-white text-sm font-medium">
-                   {caseStudy.industry} Case Study
-                 </div>
-                 <div className="text-gray-300 text-xs">
-                   Duration: ~3-5 minutes
-                 </div>
-               </div>
-             </div>
-             
-             <div className="mt-6 text-center">
-               <p className="text-gray-400 text-sm">
-                 Click the play button to start watching the case study video
-               </p>
-             </div>
-           </Card>
-         </motion.div>
+            </div>
+            
+            <div className="mt-4 md:mt-6 text-center">
+              <p className="text-gray-400 text-xs md:text-sm">
+                Use the video controls to play, pause, and adjust volume
+              </p>
+            </div>
+          </Card>
+        </motion.div>
 
         {/* Challenge & Solution */}
         <motion.div
@@ -273,23 +235,23 @@ const CaseStudyDetail = () => {
            transition={{ duration: 0.8, delay: 0.8 }}
            className="mb-16"
          >
-           <Card className="glass-hover p-8">
-             <div className="text-center mb-8">
-               <h3 className="text-3xl font-bold text-white mb-4">Client Testimonials & Results</h3>
-               <p className="text-gray-400 text-lg">
+           <Card className="glass-hover p-4 md:p-8">
+             <div className="text-center mb-6 md:mb-8">
+               <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">Client Testimonials & Results</h3>
+               <p className="text-gray-400 text-base md:text-lg">
                  Visual proof of our success with {caseStudy.industry.toLowerCase()}
                </p>
              </div>
              
-                                                                                                               <div className={(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "flex justify-center" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"}>
+             <div className={(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "flex justify-center" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"}>
                 {testimonialImages.map((image, index) => (
                   <div key={index} className={(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "w-full max-w-2xl" : "group cursor-pointer"}>
-                    <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "shadow-2xl border border-primary/20" : ""}`}>
-                                             <img
-                         src={image}
-                         alt={`Testimonial ${index + 1}`}
-                         className={`w-full object-right object-cover transition-all duration-700 ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "h-96 hover:scale-105" : "h-48 group-hover:scale-110"}`}
-                       />
+                    <div className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "shadow-2xl border border-primary/20" : ""}`}>
+                      <img
+                        src={image}
+                        alt={`Testimonial ${index + 1}`}
+                        className={`w-full object-cover transition-all duration-700 ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "h-64 md:h-96 hover:scale-105" : "h-40 sm:h-48 group-hover:scale-110"}`}
+                      />
                       <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "opacity-0 hover:opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity duration-300`} />
                       
                       {/* Enhanced overlay for Chiropractor, Chiro Spot, Professional Services, and Urban Balance Clinic */}
@@ -297,8 +259,8 @@ const CaseStudyDetail = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
                       )}
                     </div>
-                    <div className={`mt-6 text-center ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "px-4" : ""}`}>
-                      <p className={`font-semibold ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "text-xl text-white mb-2" : "text-white font-medium text-sm"}`}>
+                    <div className={`mt-4 md:mt-6 text-center ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "px-2 md:px-4" : ""}`}>
+                      <p className={`font-semibold ${(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") ? "text-lg md:text-xl text-white mb-2" : "text-white font-medium text-sm"}`}>
                         {caseStudy.industry === "Chiropractor" ? "Practice Transformation Results" : 
                          caseStudy.industry === "Chiro Spot" ? "Business Transformation Results" :
                          caseStudy.industry === "Professional Services" ? "Service Transformation Results" :
@@ -310,13 +272,12 @@ const CaseStudyDetail = () => {
                         }
                       </p>
                       
-                      
                       {/* Additional details for Chiropractor, Chiro Spot, Professional Services, and Urban Balance Clinic */}
                       {(caseStudy.industry === "Chiropractor" || caseStudy.industry === "Chiro Spot" || caseStudy.industry === "Professional Services" || caseStudy.industry === "Urban Balance Clinic") && (
-                        <div className="mt-4 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
-                          <div className="grid grid-cols-3 gap-4 text-center">
+                        <div className="mt-3 md:mt-4 p-3 md:p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg md:rounded-xl border border-primary/20">
+                          <div className="grid grid-cols-3 gap-2 md:gap-4 text-center">
                             <div>
-                              <div className="text-2xl font-bold text-primary">
+                              <div className="text-lg md:text-2xl font-bold text-primary">
                                 {caseStudy.industry === "Chiropractor" ? "100%" : 
                                  caseStudy.industry === "Chiro Spot" ? "100%" :
                                  caseStudy.industry === "Urban Balance Clinic" ? "100%" :
@@ -330,7 +291,7 @@ const CaseStudyDetail = () => {
                               </div>
                             </div>
                             <div>
-                              <div className="text-2xl font-bold text-primary">
+                              <div className="text-lg md:text-2xl font-bold text-primary">
                                 {caseStudy.industry === "Chiropractor" ? "60%" : 
                                  caseStudy.industry === "Chiro Spot" ? "60%" :
                                  caseStudy.industry === "Urban Balance Clinic" ? "80%" :
@@ -344,7 +305,7 @@ const CaseStudyDetail = () => {
                               </div>
                             </div>
                             <div>
-                              <div className="text-2xl font-bold text-primary">
+                              <div className="text-lg md:text-2xl font-bold text-primary">
                                 {caseStudy.industry === "Chiropractor" ? "50%" : 
                                  caseStudy.industry === "Chiro Spot" ? "50%" :
                                  caseStudy.industry === "Urban Balance Clinic" ? "70%" :
