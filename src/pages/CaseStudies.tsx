@@ -245,7 +245,7 @@ const CaseStudies = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: "500%", label: "Average Lead Increase", color: "text-blue-400" },
-                { number: "$50M+", label: "Revenue Generated", color: "text-purple-400" },
+                { number: "$2M+", label: "Revenue Generated", color: "text-purple-400" },
                 { number: "95%", label: "Client Retention", color: "text-blue-500" },
                 { number: "48hr", label: "Setup Time", color: "text-purple-500" }
               ].map((metric, index) => (

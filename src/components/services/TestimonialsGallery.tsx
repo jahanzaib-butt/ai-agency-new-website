@@ -5,7 +5,7 @@ const testimonialImages = [
   {
     image: "/lovable-uploads/original-6e6ebec1684e7535a9564d4c955f934a.png",
     title: "Key Performance Metrics",
-    description: "Real results from our AI-powered campaigns showing 500% lead increases and $50M+ revenue generated"
+    description: "Real results from our AI-powered campaigns showing 500% lead increases and $2M+ revenue generated"
   },
   {
     image: "/lovable-uploads/b2b2.jpg", 

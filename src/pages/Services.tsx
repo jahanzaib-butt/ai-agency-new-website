@@ -237,7 +237,7 @@ const Services = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: "500%", label: "Average Lead Increase", color: "text-blue-400", icon: "📈" },
-                { number: "$50M+", label: "Revenue Generated", color: "text-purple-400", icon: "💰" },
+                { number: "$2M+", label: "Revenue Generated", color: "text-purple-400", icon: "💰" },
                 { number: "95%", label: "Client Retention", color: "text-blue-500", icon: "🤝" },
                 { number: "48hr", label: "Setup Time", color: "text-purple-500", icon: "⚡" }
               ].map((stat, index) => (

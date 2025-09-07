@@ -171,7 +171,7 @@ export const testimonialStats = [
     image: "/lovable-uploads/8b9c3e02-ce80-486a-acda-d6a5b7e5cf05.png"
   },
   {
-    title: "$50M+",
+    title: "$2M+",
     subtitle: "Revenue Generated", 
     description: "Total revenue generated for our clients through AI-powered campaigns"
   },
