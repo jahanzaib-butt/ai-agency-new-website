@@ -2,5 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
-  ]
+  ],
+  "buildCommand": "npm ci --include=optional && npm run build",
+  "installCommand": "npm ci --include=optional"
 }
