@@ -9,7 +9,7 @@ const testimonials = [
     name: "Sarah Chen",
     role: "SaaS Founder",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content: "The AI lead generation system increased our qualified leads by 300% in just 30 days. The automated qualification process saves our sales team hours every day."
+    content: "The AI lead generation system has increased our qualified leads by 300% in just 30 days. The automated qualification process saves our sales team hours every day."
   },
   {
     name: "Marcus Johnson",
