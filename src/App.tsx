@@ -14,6 +14,7 @@ import Workflows from "./pages/Workflows";
 import Contact from "./pages/Contact";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import CaseStudies from "./pages/CaseStudies";
+import MedicalBilling from "./pages/MedicalBilling";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
@@ -212,6 +213,7 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:serviceId" element={<ServiceDetail />} />
+              <Route path="/medical-billing" element={<MedicalBilling />} />
               <Route path="/workflows" element={<Workflows />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/contact" element={<Contact />} />
