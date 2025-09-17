@@ -100,7 +100,7 @@ const Index = () => {
                 ))}
               </div>
               <span className="text-sm font-medium text-white">
-                Trusted by 500+ businesses
+                Trusted by 100+ businesses
               </span>
             </div>
             
