@@ -11,7 +11,7 @@ const About = () => {
   };
 
   const stats = [
-    { icon: <Users className="w-8 h-8" />, number: "500+", label: "Businesses Scaled" },
+    { icon: <Users className="w-8 h-8" />, number: "100+", label: "Businesses Scaled" },
     { icon: <Target className="w-8 h-8" />, number: "10M+", label: "Leads Generated" },
     { icon: <TrendingUp className="w-8 h-8" />, number: "500%", label: "Average Growth" },
     { icon: <Award className="w-8 h-8" />, number: "98%", label: "Client Satisfaction" },
